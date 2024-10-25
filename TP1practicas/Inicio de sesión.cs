@@ -64,16 +64,16 @@ namespace TP1practicas
                         {
                             WelcomeAdmin bienvenidaAdmin = new WelcomeAdmin();
                             bienvenidaAdmin.Show();
-                            //this.Close();
+                            
                         }
                         else
                         {
                             WelcomeUser bienvenidaUsuario = new WelcomeUser();
                             bienvenidaUsuario.Show();
-                            //this.Close();
+                            
                         }
                         this.Hide();
-                        //MessageBox.Show("¡Inicio de sesión exitoso!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        
                     }
                     else
                     {
