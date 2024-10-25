@@ -36,7 +36,7 @@ namespace TP1practicas
             string contraseña1 = txtContraseña1.Text;
             string contraseña2 = txtContraseña2.Text;
             DialogResult Resultado;
-            ConsultaGen consulta = new ConsultaGen("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|Usuariosalgoritmos.accdb;");
+            ConsultaGen consulta = new ConsultaGen();
 
             string password1 = txtContraseña1.Text;
             string password2 = txtContraseña2.Text;

@@ -36,7 +36,7 @@ namespace TP1practicas
             string password2 = txtConfirm2.Text;
 
             DialogResult Resultado;
-            ConsultaGen consulta = new ConsultaGen("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|Usuariosalgoritmos.accdb;");
+            ConsultaGen consulta = new ConsultaGen();
 
             if (string.IsNullOrEmpty(txtConfirm.Text) || string.IsNullOrEmpty(txtConfirm2.Text))
             {

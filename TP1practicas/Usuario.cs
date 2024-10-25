@@ -8,12 +8,15 @@ namespace TP1practicas
 {
     internal class Usuario
     {
-        private string nombre;
-        private string apellido;
-        private string fechanacimiento;
-        private int dni;
-        private string email;
-        private string contraseña;
-        private string repitacontraseña;
+        public string NombreUsuario {get; set;}
+        public string Contraseña {get; set;}
+        public string Tipo {get; set;} 
+
+        public Usuario(string nombreUsuario, string contraseña, string tipo)
+        {
+            NombreUsuario = nombreUsuario;
+            Contraseña = contraseña;
+            Tipo = tipo;
+        }
     }
 }

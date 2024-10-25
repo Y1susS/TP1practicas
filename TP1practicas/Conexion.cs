@@ -9,16 +9,16 @@ namespace TP1practicas
 {
     internal class Conexion
     {
-        private string cadena;
+        private string cadena = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|Usuariosalgoritmos.accdb;";
         protected OleDbConnection conectarBase;
-        public Conexion(string cadenaConexion)
+        public Conexion()
         {
-            cadena = cadenaConexion;
+            conectarBase = new OleDbConnection(cadena) ;
         }
 
         protected void Conectar()
         {
-            conectarBase = new OleDbConnection(cadena);
+            if (conectarBase.State == System.Data.ConnectionState.Closed)
             conectarBase.Open();
         }
 

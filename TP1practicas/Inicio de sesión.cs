@@ -43,8 +43,8 @@ namespace TP1practicas
         {
             string usuario = txtUsuario.Text;
             string contraseña = txtContraseña.Text;
-
-            ConsultaGen consulta = new ConsultaGen("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|Usuariosalgoritmos.accdb;");
+            ConsultaGen consulta = new ConsultaGen();
+            Usuario usuarioValido = consulta.ValidarUsuario(usuario, contraseña);
 
             if (string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtContraseña.Text))
             {
@@ -58,9 +58,22 @@ namespace TP1practicas
             {
                 try
                 {
-                    if (consulta.ValidarUsuario(usuario, contraseña))
+                    if (usuarioValido != null)
                     {
-                        MessageBox.Show("¡Inicio de sesión exitoso!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (usuarioValido.Tipo == "administrador")
+                        {
+                            WelcomeAdmin bienvenidaAdmin = new WelcomeAdmin();
+                            bienvenidaAdmin.Show();
+                            //this.Close();
+                        }
+                        else
+                        {
+                            WelcomeUser bienvenidaUsuario = new WelcomeUser();
+                            bienvenidaUsuario.Show();
+                            //this.Close();
+                        }
+                        this.Hide();
+                        //MessageBox.Show("¡Inicio de sesión exitoso!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {

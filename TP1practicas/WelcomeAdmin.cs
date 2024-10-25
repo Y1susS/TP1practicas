@@ -39,5 +39,15 @@ namespace TP1practicas
             this.Close();
             MessageBox.Show("Has cerrado sesión exitosamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void WelcomeAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblWelcome_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

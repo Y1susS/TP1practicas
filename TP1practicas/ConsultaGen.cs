@@ -16,23 +16,24 @@ namespace TP1practicas
         private OleDbDataAdapter dataAdapter;
         private DataTable dataTable;
 
-        public ConsultaGen(string cadenaConexion) : base(cadenaConexion)
+        public Usuario ValidarUsuario(string usuario, string contraseña)
         {
-
-        }
-        public bool ValidarUsuario(string usuario, string contraseña)
-        {
+            Usuario usuarioValido = null;
             try
             {
                 Conectar();
-                string Consulta = "SELECT COUNT (*) FROM Tabla1 WHERE usuario = ? AND contraseña = ?";
+                string Consulta = "SELECT tipo FROM Tabla1 WHERE usuario = ? AND contraseña = ?";
 
                 miComando = new OleDbCommand(Consulta, conectarBase);
                 miComando.Parameters.AddWithValue("@usuario", usuario);
                 miComando.Parameters.AddWithValue("@contraseña", contraseña);
 
-                int resultado = (int)miComando.ExecuteScalar();
-                return resultado > 0;
+                var tipo = miComando.ExecuteScalar();
+
+                if (tipo != null)
+                {
+                    usuarioValido = new Usuario(usuario, contraseña, tipo.ToString());
+                }
 
             }
             catch (Exception ex)
@@ -44,6 +45,7 @@ namespace TP1practicas
             {
                 Desconectar();
             }
+            return usuarioValido;
         }
 
         public bool AgregarUsuario(string usuario, string contraseña, string email)

@@ -29,7 +29,7 @@ namespace TP1practicas
             string usuario = txtUsuario.Text;
             string mail = txtEmail.Text;
 
-            ConsultaGen consulta = new ConsultaGen("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|Usuariosalgoritmos.accdb;");
+            ConsultaGen consulta = new ConsultaGen();
             if (string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtEmail.Text))
             {
                 MessageBox.Show("¡Debe completar todos los campos!","", MessageBoxButtons.OK, MessageBoxIcon.Warning);
