@@ -46,7 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Personas.cs" />
+    <Compile Include="Conexion.cs" />
+    <Compile Include="ConsultaGen.cs" />
+    <Compile Include="ReestablecerContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReestablecerContraseña.Designer.cs">
+      <DependentUpon>ReestablecerContraseña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -72,6 +80,21 @@
     <Compile Include="Registro.Designer.cs">
       <DependentUpon>Registro.cs</DependentUpon>
     </Compile>
+    <Compile Include="WelcomeAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WelcomeAdmin.Designer.cs">
+      <DependentUpon>WelcomeAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WelcomeUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WelcomeUser.Designer.cs">
+      <DependentUpon>WelcomeUser.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ReestablecerContraseña.resx">
+      <DependentUpon>ReestablecerContraseña.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inicio de sesión.resx">
       <DependentUpon>Inicio de sesión.cs</DependentUpon>
     </EmbeddedResource>
@@ -85,6 +108,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WelcomeAdmin.resx">
+      <DependentUpon>WelcomeAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WelcomeUser.resx">
+      <DependentUpon>WelcomeUser.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -119,6 +148,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\mostrar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\candado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lapiz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\libreta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\papel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

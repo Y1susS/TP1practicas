@@ -36,24 +36,25 @@
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lnkolvidocontraseña = new System.Windows.Forms.LinkLabel();
             this.lnkCrearCuenta = new System.Windows.Forms.LinkLabel();
-            this.lblLeyenda = new System.Windows.Forms.Label();
             this.lblInicieSesion = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblMenu = new System.Windows.Forms.Label();
             this.btnMinizar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.pcbMostrar = new System.Windows.Forms.PictureBox();
             this.pcbOcultar = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblMenu = new System.Windows.Forms.Label();
+            this.pctUser = new System.Windows.Forms.PictureBox();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMostrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbOcultar)).BeginInit();
-            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctUser)).BeginInit();
             this.SuspendLayout();
             // 
             // btnIngresar
             // 
             this.btnIngresar.BackColor = System.Drawing.Color.LightGreen;
             this.btnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresar.Location = new System.Drawing.Point(59, 196);
+            this.btnIngresar.Location = new System.Drawing.Point(240, 166);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(370, 36);
             this.btnIngresar.TabIndex = 3;
@@ -64,19 +65,19 @@
             // txtContraseña
             // 
             this.txtContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseña.Location = new System.Drawing.Point(188, 148);
+            this.txtContraseña.Location = new System.Drawing.Point(372, 126);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
-            this.txtContraseña.Size = new System.Drawing.Size(202, 26);
+            this.txtContraseña.Size = new System.Drawing.Size(202, 30);
             this.txtContraseña.TabIndex = 2;
             this.txtContraseña.TextChanged += new System.EventHandler(this.txtContraseña_TextChanged);
             // 
             // txtUsuario
             // 
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(188, 115);
+            this.txtUsuario.Location = new System.Drawing.Point(372, 93);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(238, 26);
+            this.txtUsuario.Size = new System.Drawing.Size(238, 30);
             this.txtUsuario.TabIndex = 1;
             this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
@@ -84,10 +85,10 @@
             // 
             this.lblContraseña.AutoSize = true;
             this.lblContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContraseña.Location = new System.Drawing.Point(57, 152);
+            this.lblContraseña.Location = new System.Drawing.Point(241, 130);
             this.lblContraseña.Margin = new System.Windows.Forms.Padding(3);
             this.lblContraseña.Name = "lblContraseña";
-            this.lblContraseña.Size = new System.Drawing.Size(92, 20);
+            this.lblContraseña.Size = new System.Drawing.Size(114, 25);
             this.lblContraseña.TabIndex = 24;
             this.lblContraseña.Text = "Contraseña";
             // 
@@ -95,10 +96,10 @@
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(57, 119);
+            this.lblUsuario.Location = new System.Drawing.Point(241, 97);
             this.lblUsuario.Margin = new System.Windows.Forms.Padding(3);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(64, 20);
+            this.lblUsuario.Size = new System.Drawing.Size(79, 25);
             this.lblUsuario.TabIndex = 23;
             this.lblUsuario.Text = "Usuario";
             // 
@@ -106,10 +107,10 @@
             // 
             this.lnkolvidocontraseña.AutoSize = true;
             this.lnkolvidocontraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnkolvidocontraseña.Location = new System.Drawing.Point(130, 303);
+            this.lnkolvidocontraseña.Location = new System.Drawing.Point(312, 215);
             this.lnkolvidocontraseña.Margin = new System.Windows.Forms.Padding(3);
             this.lnkolvidocontraseña.Name = "lnkolvidocontraseña";
-            this.lnkolvidocontraseña.Size = new System.Drawing.Size(212, 20);
+            this.lnkolvidocontraseña.Size = new System.Drawing.Size(265, 25);
             this.lnkolvidocontraseña.TabIndex = 4;
             this.lnkolvidocontraseña.TabStop = true;
             this.lnkolvidocontraseña.Text = "Olvide mi contraseña/usuario";
@@ -121,49 +122,57 @@
             // 
             this.lnkCrearCuenta.AutoSize = true;
             this.lnkCrearCuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnkCrearCuenta.Location = new System.Drawing.Point(172, 335);
+            this.lnkCrearCuenta.Location = new System.Drawing.Point(350, 251);
             this.lnkCrearCuenta.Margin = new System.Windows.Forms.Padding(3, 3, 3, 12);
             this.lnkCrearCuenta.Name = "lnkCrearCuenta";
-            this.lnkCrearCuenta.Size = new System.Drawing.Size(132, 20);
+            this.lnkCrearCuenta.Size = new System.Drawing.Size(163, 25);
             this.lnkCrearCuenta.TabIndex = 5;
             this.lnkCrearCuenta.TabStop = true;
             this.lnkCrearCuenta.Text = "Crear una cuenta";
             this.lnkCrearCuenta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lnkCrearCuenta.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkCrearCuenta_LinkClicked);
             // 
-            // lblLeyenda
-            // 
-            this.lblLeyenda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblLeyenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLeyenda.ForeColor = System.Drawing.Color.Red;
-            this.lblLeyenda.Location = new System.Drawing.Point(59, 252);
-            this.lblLeyenda.Margin = new System.Windows.Forms.Padding(3);
-            this.lblLeyenda.Name = "lblLeyenda";
-            this.lblLeyenda.Size = new System.Drawing.Size(370, 36);
-            this.lblLeyenda.TabIndex = 35;
-            this.lblLeyenda.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblLeyenda.Visible = false;
-            this.lblLeyenda.Click += new System.EventHandler(this.label1_Click);
-            // 
             // lblInicieSesion
             // 
             this.lblInicieSesion.AutoSize = true;
             this.lblInicieSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInicieSesion.Location = new System.Drawing.Point(53, 61);
+            this.lblInicieSesion.Location = new System.Drawing.Point(241, 51);
             this.lblInicieSesion.Margin = new System.Windows.Forms.Padding(3);
             this.lblInicieSesion.Name = "lblInicieSesion";
-            this.lblInicieSesion.Size = new System.Drawing.Size(376, 20);
+            this.lblInicieSesion.Size = new System.Drawing.Size(452, 25);
             this.lblInicieSesion.TabIndex = 51;
             this.lblInicieSesion.Text = "Ingrese su usuario y contraseña para acceder";
             this.lblInicieSesion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblInicieSesion.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel1.Controls.Add(this.lblMenu);
+            this.panel1.Controls.Add(this.btnMinizar);
+            this.panel1.Controls.Add(this.btnCerrar);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(618, 45);
+            this.panel1.TabIndex = 61;
+            // 
+            // lblMenu
+            // 
+            this.lblMenu.AutoSize = true;
+            this.lblMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMenu.Location = new System.Drawing.Point(12, 15);
+            this.lblMenu.Name = "lblMenu";
+            this.lblMenu.Size = new System.Drawing.Size(47, 17);
+            this.lblMenu.TabIndex = 51;
+            this.lblMenu.Text = "Menú";
             // 
             // btnMinizar
             // 
             this.btnMinizar.BackColor = System.Drawing.Color.LightCyan;
             this.btnMinizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinizar.Image")));
-            this.btnMinizar.Location = new System.Drawing.Point(312, 3);
+            this.btnMinizar.Location = new System.Drawing.Point(428, 4);
             this.btnMinizar.Name = "btnMinizar";
             this.btnMinizar.Size = new System.Drawing.Size(89, 36);
             this.btnMinizar.TabIndex = 50;
@@ -177,7 +186,7 @@
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(407, 3);
+            this.btnCerrar.Location = new System.Drawing.Point(523, 4);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(89, 36);
             this.btnCerrar.TabIndex = 49;
@@ -189,7 +198,7 @@
             // 
             this.pcbMostrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pcbMostrar.Image = global::TP1practicas.Properties.Resources.mostrar2;
-            this.pcbMostrar.Location = new System.Drawing.Point(394, 147);
+            this.pcbMostrar.Location = new System.Drawing.Point(578, 125);
             this.pcbMostrar.Name = "pcbMostrar";
             this.pcbMostrar.Size = new System.Drawing.Size(30, 30);
             this.pcbMostrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -201,7 +210,7 @@
             // 
             this.pcbOcultar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pcbOcultar.Image = global::TP1practicas.Properties.Resources.ocultar5;
-            this.pcbOcultar.Location = new System.Drawing.Point(394, 147);
+            this.pcbOcultar.Location = new System.Drawing.Point(578, 125);
             this.pcbOcultar.Name = "pcbOcultar";
             this.pcbOcultar.Size = new System.Drawing.Size(30, 30);
             this.pcbOcultar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -209,41 +218,29 @@
             this.pcbOcultar.TabStop = false;
             this.pcbOcultar.Click += new System.EventHandler(this.pcbOcultar_Click);
             // 
-            // panel1
+            // pctUser
             // 
-            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel1.Controls.Add(this.lblMenu);
-            this.panel1.Controls.Add(this.btnMinizar);
-            this.panel1.Controls.Add(this.btnCerrar);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(499, 45);
-            this.panel1.TabIndex = 61;
-            // 
-            // lblMenu
-            // 
-            this.lblMenu.AutoSize = true;
-            this.lblMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMenu.Location = new System.Drawing.Point(12, 15);
-            this.lblMenu.Name = "lblMenu";
-            this.lblMenu.Size = new System.Drawing.Size(38, 13);
-            this.lblMenu.TabIndex = 51;
-            this.lblMenu.Text = "Menú";
+            this.pctUser.Image = global::TP1practicas.Properties.Resources.user;
+            this.pctUser.Location = new System.Drawing.Point(8, 51);
+            this.pctUser.Name = "pctUser";
+            this.pctUser.Size = new System.Drawing.Size(225, 225);
+            this.pctUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctUser.TabIndex = 62;
+            this.pctUser.TabStop = false;
             // 
             // InicioSesion
             // 
             this.AcceptButton = this.btnIngresar;
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Ivory;
-            this.ClientSize = new System.Drawing.Size(499, 441);
+            this.ClientSize = new System.Drawing.Size(618, 284);
             this.ControlBox = false;
+            this.Controls.Add(this.pctUser);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pcbMostrar);
             this.Controls.Add(this.pcbOcultar);
             this.Controls.Add(this.lblInicieSesion);
-            this.Controls.Add(this.lblLeyenda);
             this.Controls.Add(this.lnkCrearCuenta);
             this.Controls.Add(this.lnkolvidocontraseña);
             this.Controls.Add(this.btnIngresar);
@@ -260,10 +257,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú";
             this.Load += new System.EventHandler(this.InicioSesion_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pcbMostrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbOcultar)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbMostrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbOcultar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -278,7 +276,6 @@
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.LinkLabel lnkolvidocontraseña;
         private System.Windows.Forms.LinkLabel lnkCrearCuenta;
-        private System.Windows.Forms.Label lblLeyenda;
         private System.Windows.Forms.Button btnMinizar;
         private System.Windows.Forms.Label lblInicieSesion;
         private System.Windows.Forms.Button btnCerrar;
@@ -286,5 +283,6 @@
         private System.Windows.Forms.PictureBox pcbOcultar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblMenu;
+        private System.Windows.Forms.PictureBox pctUser;
     }
 }

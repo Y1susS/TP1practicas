@@ -26,60 +26,60 @@ namespace TP1practicas
 
         private void btnEnviarCodigo_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtApellido.Text) || string.IsNullOrEmpty(txtEmail.Text) || !mskDNI.MaskFull)
+            string usuario = txtUsuario.Text;
+            string mail = txtEmail.Text;
+
+            ConsultaGen consulta = new ConsultaGen();
+            if (string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtEmail.Text))
             {
-                lblLeyenda.Text = ("Debe completar todos los campos");
+                MessageBox.Show("¡Debe completar todos los campos!","", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                lblLeyenda.Text = ("Un código ha sido enviado a su correo electrónico");
-                mskCodigoEnviado.Enabled = true;
-                btnIngresarCodigo.Enabled = true;
+                try
+                {
+                    if (consulta.ValidarUsuarioMail(usuario, mail))
+                    {
+                        MessageBox.Show("Un código ha sido enviado a su correo electrónico", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtCodigo.Enabled = true;
+                        btnIngresarCodigo.Enabled = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("¡Nombre de usuario y/o Correo no validos!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Se produjo un ERROR al conectar a la base de datos", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-
-            lblLeyenda.Visible = true;
         }
 
         private void btnIngresarCodigo_Click(object sender, EventArgs e)
         {
-            DialogResult CrearCuenta;
-            if (!mskCodigoEnviado.MaskFull)
+            int codigo;
+            string usuario = txtUsuario.Text;
+            if (int.TryParse(txtCodigo.Text, out codigo))
             {
-                MessageBox.Show("Complete el campo","", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                lblLeyenda.Visible = false;
-                txtNombre.Clear(); txtApellido.Clear(); txtEmail.Clear(); mskDNI.Clear(); mskCodigoEnviado.Clear();
-                CrearCuenta = MessageBox.Show("¡Se ha restablecido su usuario/contraseña exitosamente! " +
-                "\n               Presione Aceptar para volver al menú", "",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if (CrearCuenta == DialogResult.OK)
+                if (codigo == 01234)
                 {
-                    InicioSesion iniciosesion = new InicioSesion();
-                    iniciosesion.Show();
+                    txtUsuario.Clear(); txtEmail.Clear();
+                    ReestablecerContraseña reestablecer = new ReestablecerContraseña(usuario);
+                    reestablecer.Show();
                     this.Close();
                 }
-                
+                else MessageBox.Show("¡El código es incorrecto!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
-        }
-
-        private void lblRecContraseña_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
+            else if (string.IsNullOrEmpty(txtCodigo.Text))
+            {
+                MessageBox.Show("¡El campo no puede estar vacío!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else MessageBox.Show("¡El campo no puede contener letras!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
         }
-
         private void RecuperoContraseña_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDni_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -94,86 +94,29 @@ namespace TP1practicas
 
         }
 
-        private void txtFechaNac_TextChanged(object sender, EventArgs e)
+        private void txtUsuarioKey(object sender, KeyPressEventArgs UserKey)
         {
-
-        }
-
-        private void txtFechaNac_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtApellidoKey(object sender, KeyPressEventArgs ApellidoKey)
-        {
-            if (Char.IsLetter(ApellidoKey.KeyChar))
+            if (Char.IsLetter(UserKey.KeyChar))
             {
-                ApellidoKey.Handled = false;
+                UserKey.Handled = false;
             }
-            else if (Char.IsSeparator(ApellidoKey.KeyChar))
+            else if (Char.IsSeparator(UserKey.KeyChar))
             {
-                ApellidoKey.Handled = false;
+                UserKey.Handled = true;
             }
-            else if (Char.IsControl(ApellidoKey.KeyChar))
+            else if (Char.IsControl(UserKey.KeyChar))
             {
-                ApellidoKey.Handled = false;
+                UserKey.Handled = false;
+            }
+            else if (Char.IsNumber(UserKey.KeyChar))
+            {
+                UserKey.Handled = false;
             }
             else
             {
-                ApellidoKey.Handled = true;
+                UserKey.Handled = true;
             }
         }
-
-        private void txtNombreKey(object sender, KeyPressEventArgs NombreKey)
-        {
-            if (Char.IsLetter(NombreKey.KeyChar))
-            {
-                NombreKey.Handled = false;
-            }
-            else if (Char.IsSeparator(NombreKey.KeyChar))
-            {
-                NombreKey.Handled = false;
-            }
-            else if (Char.IsControl(NombreKey.KeyChar))
-            {
-                NombreKey.Handled = false;
-            }
-            else
-            {
-                NombreKey.Handled = true;
-            }
-        }
-
-        private void mskFechaNacimiento_MaskInputRejected(object sender, MaskInputRejectedEventArgs FechaNacKey)
-        {
-            
-        }
-
-        private void mskDNI_MaskInputRejected(object sender, MaskInputRejectedEventArgs DniKey)
-        {
-            
-        }
-
-        private void lblLeyenda2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblLeyenda_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mskCodigoEnviado_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-            
-        }
-        
-        private void lblInicieSesion_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCerrar2_Click(object sender, EventArgs e)
         {
             InicioSesion iniciosesion = new InicioSesion();
@@ -192,6 +135,26 @@ namespace TP1practicas
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblInicieSesion_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pctKey_Click(object sender, EventArgs e)
         {
 
         }
