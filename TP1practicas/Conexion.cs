@@ -9,6 +9,7 @@ namespace TP1practicas
 {
     internal class Conexion
     {
+        //cadena de conexión
         private string cadena = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|Usuariosalgoritmos.accdb;";
         protected OleDbConnection conectarBase;
         public Conexion()

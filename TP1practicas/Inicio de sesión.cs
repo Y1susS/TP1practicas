@@ -86,14 +86,10 @@ namespace TP1practicas
                 }
             }
         }
-<<<<<<< HEAD
         private void label1_Click(object sender, EventArgs e)
         {
             
         }
-
-=======
->>>>>>> d1c723458af05791bf270db5b7ad1bd59b4374cf
         private void lnkCrearCuenta_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FrmRegistro Registro = new FrmRegistro();
