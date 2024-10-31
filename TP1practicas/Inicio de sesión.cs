@@ -55,7 +55,7 @@ namespace TP1practicas
         }
         private void label1_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void lnkCrearCuenta_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
