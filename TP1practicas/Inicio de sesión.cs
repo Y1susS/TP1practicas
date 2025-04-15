@@ -28,15 +28,16 @@ namespace TP1practicas
             this.Hide();
         }
 
-        private void txtUsuario_TextChanged(object sender, EventArgs e)
-        {
-            string usuario = txtUsuario.Text;
-        }
-
         private void txtContraseña_TextChanged(object sender, EventArgs e)
         {
             string contraseña = txtContraseña.Text;
-           
+            if (txtContraseña.Text == "PASSWORD")
+            {
+                txtContraseña.Text = "";
+                txtContraseña.ForeColor = Color.Black;
+                txtContraseña.UseSystemPasswordChar = true;
+            }
+
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -130,19 +131,60 @@ namespace TP1practicas
 
         private void pcbMostrar_Click(object sender, EventArgs e)
         {
-            pcbOcultar.BringToFront();
-            txtContraseña.PasswordChar = '\0';
+            //pcbOcultar.BringToFront();
+            //txtContraseña.PasswordChar = '\0';
+            if (txtContraseña.UseSystemPasswordChar == true)
+            {
+                txtContraseña.UseSystemPasswordChar = false;
+                pcbMostrar.Visible = false;
+                pcbOcultar.Visible = true;
+            }
         }
 
         private void pcbOcultar_Click(object sender, EventArgs e)
         {
-            pcbMostrar.BringToFront();
-            txtContraseña.PasswordChar = '*';
+            //pcbMostrar.BringToFront();
+            //txtContraseña.PasswordChar = '*';
+            if (txtContraseña.UseSystemPasswordChar == false)
+            {
+                txtContraseña.UseSystemPasswordChar = true;
+                pcbMostrar.Visible = true;
+                pcbOcultar.Visible = false;
+            }
         }
 
         private void lnkolvidocontraseña_TabStopChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtPassword_Leave(object sender, EventArgs e)
+        {
+            if (txtContraseña.Text == "")
+            {
+                txtContraseña.Text = "PASSWORD";
+                txtContraseña.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtUsuario_Leave(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text == "")
+            {
+                txtUsuario.Text = "USUARIO";
+                txtUsuario.ForeColor = Color.Black;
+            }
+
+        }
+
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text == "USUARIO")
+            {
+                txtUsuario.Text = "";
+                txtUsuario.ForeColor = Color.Black;
+            }
         }
         //private void Validar_Credenciales(string usuario, string contraseña)
         //{
